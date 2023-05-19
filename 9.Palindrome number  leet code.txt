@@ -1,0 +1,25 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+        if(x==0||(x>=1&&x<=9)){//if we reverse a single the it's the same
+            return true;
+        }
+      if(x<0||x/10==0){ //if it is negative or x/10=01 false
+          return false;
+      }
+      else{
+          int s=0;
+          int temp=x; //store value of x in temp so that the value will not be changed when comparing
+          while(x>0){//the loop continues until x becomes 0
+int r=x%10; //r=121/10=1
+ s=(s*10)+r;// storing the reverse of x ie s=(0*10)+1=1
+ x=x/10;//braking the number x/10 ie 121/10=12
+          }
+if(temp==s){
+           return true; //if input=reverse its true
+}
+else{
+    return false;
+}
+      }
+    }
+}
